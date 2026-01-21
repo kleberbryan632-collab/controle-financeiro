@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle Financeiro Moderno</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- gráfico -->
+</head>
+<body>
+  <div class="marca-agua">Bryan Santos</div>
+
+  <!-- Tela de login / cadastro -->
+  <div id="loginContainer" class="container">
+    <h1>Login</h1>
+    <input id="username" type="text" placeholder="Nome de usuário">
+    <input id="password" type="password" placeholder="Senha">
+    <button id="btnLogin">Entrar</button>
+    <button id="btnCadastrar">Cadastrar</button>
+    <p id="loginMsg" class="msg"></p>
+  </div>
+
+  <!-- Tela do app -->
+  <div id="appContainer" class="container" style="display:none;">
+    <h1>Meu Controle Financeiro</h1>
+    <p>Controle seus gastos, dívidas e metas mensais</p>
+
+    <div class="resumo">
+      <h2>Resumo do Mês</h2>
+      <div class="valores">
+        <p>Saldo: R$ <span id="saldo">0.00</span></p>
+        <p>Total gasto: R$ <span id="totalGasto">0.00</span></p>
+        <p>Sobrou: R$ <span id="sobrou">0.00</span></p>
+      </div>
+    </div>
+
+    <div class="adicionar-gasto">
+      <h2>Adicionar gasto</h2>
+      <input id="nomeGasto" type="text" placeholder="Nome do gasto">
+      <input id="valorGasto" type="number" placeholder="Valor">
+      <select id="categoriaGasto">
+        <option value="Alimentação">Alimentação</option>
+        <option value="Transporte">Transporte</option>
+        <option value="Lazer">Lazer</option>
+        <option value="Outros">Outros</option>
+      </select>
+      <button id="btnAdicionar">Adicionar</button>
+    </div>
+
+    <div class="repor-saldo">
+      <h2>Repor Saldo</h2>
+      <input id="valorRepor" type="number" placeholder="Valor para repor">
+      <button id="btnRepor">Repor</button>
+    </div>
+
+    <div class="lista-gastos">
+      <h2>Gastos do mês</h2>
+      <ul id="listaGastos"></ul>
+    </div>
+
+    <div class="grafico-container">
+      <canvas id="graficoGastos"></canvas>
+    </div>
+
+    <button id="btnLogout" class="logout">Sair</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
